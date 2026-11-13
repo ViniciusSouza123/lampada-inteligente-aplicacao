@@ -1,0 +1,10 @@
+# Senhas e chaves (nunca enviar para o GitHub)
+.env
+*.env
+arduino_secrets.h
+
+# Arquivos de sistema e de editores
+__pycache__/
+*.pyc
+.vscode/
+Thumbs.db
