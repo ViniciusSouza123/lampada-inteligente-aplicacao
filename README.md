@@ -174,16 +174,6 @@ from(bucket: "lampada")
 
 **Pelo Grafana:** abra o dashboard *Lampada inteligente* ou use **Explore** com a fonte `influxdb`.
 
-## Dificuldades encontradas e soluções
-
-- **Potenciômetro:** os pinos GPIO 15 e 12 pertencem ao ADC2, que não lê com o Wi-Fi ligado. Solução: mudar para o GPIO 34 (ADC1).
-- **Buzzer passivo:** não toca com `digitalWrite`. Solução: gerar a frequência por PWM (LEDC).
-- **LDR digital:** o módulo manda 1 no escuro. Solução: inverter no código (`LDR_INVERTER`).
-- **LED RGB com um resistor só no GND:** o vermelho "puxava" a corrente e o amarelo saía vermelho. Solução: usar só cores puras (vermelho, verde e azul).
-- **Plano grátis do Arduino IoT Cloud:** limite de 5 variáveis e sem API. Solução: reunir estados em textos (`sistema` e `LED`), receber todos os comandos em uma variável (`comando`) e guardar o histórico em um backend próprio com InfluxDB e Grafana.
-- **Cloud Agent no Opera:** não gravou na placa. Solução: usar o Edge.
-- **Docker no Windows:** a instalação exigiu o recurso *Virtual Machine Platform* (`wsl --install`).
-- **Grafana dentro do Docker:** `localhost` aponta para o próprio container. Solução: usar o nome do serviço, `http://influxdb:8086`.
 
 ## Decisões de projeto
 
